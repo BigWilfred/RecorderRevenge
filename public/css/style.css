@@ -1,0 +1,247 @@
+@font-face {
+    font-family: coco;
+    src: url(CocoPuff-Regular.ttf);
+}
+@font-face {
+    font-family: george;
+    src: url(Louis-George-Cafe.ttf);
+}
+body{
+    margin:0;
+    font-size: 14pt;
+    background-color: black;
+    color:white;
+    font-family: george;
+}
+h1{
+    margin: 0;
+    font-family:coco;
+    font-size: 4em;
+}
+.bar{
+    display:flex;
+    flex-direction:row;
+    margin-right:2.5vh;
+    margin-left:2.5vh;
+}
+
+.beat{
+    display:flex;
+    flex-direction:column;
+}
+.note{
+    flex-grow: 1;
+    border:10px solid black;
+    background-color: #494949;
+}
+
+.individualVolume{
+    display:block;
+    height:10vh;
+    margin-right: 1.5vw;
+}
+.position{
+    margin-top:10px;
+    min-width:5vw;
+    display:flex;
+    align-items: center;
+}
+.dot{
+    min-width: 10px;
+    min-height: 10px;
+    display: block;
+    margin:0 auto;
+    border-radius: 50%;
+}
+.individualVolume input{
+    width: 100%;
+    height:100%;;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+}
+.active{
+    background-color: #dd2222;
+}
+.selected{
+    background-color:#df1f3d;
+}
+
+#sequenceContainer{
+    display:inline-flex;
+    width:100%;
+    justify-content: center;
+    align-content: center;
+    
+}
+#addBar{
+
+
+}
+#addBar img{
+    width:5vh;
+    height:100%;
+}
+#controlContainer{
+    width:100vw;
+}
+#control{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 0.5fr;
+    position: fixed;
+    left:42.5vw;
+    bottom:5vh;
+    border:white solid 2px;
+    align-items:center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:0.5vw;
+    border-radius: 10px;
+    color:white;
+    box-sizing: border-box;
+}
+#tagLine{
+
+    visibility: hidden;
+}
+#control > div{
+    text-align: center;
+    width: auto;
+    height:3vh; 
+    box-sizing: border-box;
+    justify-self: center;
+}
+#control img{
+    height:80%;
+}
+#play img{
+    height:100%;
+}
+div#globalVolume{
+    grid-column-start:2;
+    grid-column-end:6;
+    width:100%;
+    box-sizing: border-box;
+}
+#volume_slider{
+    width:90%;
+}
+#clear{
+    
+}
+
+#time > div{
+    display: inline;
+}
+
+#bpm_slider{
+    position: absolute;
+    left:10%;
+    bottom:5%;
+}
+#channelVolume{
+    display: none;
+}
+
+
+#uiGrid{
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    height:auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+}
+
+#titleContainer{
+    height:33vh;
+    display: flex;
+    justify-content: center;
+    padding:2.5vh;
+    box-sizing: border-box;
+}
+#titleContainer > div{
+    width:66vw;
+    height:25vh;;
+    position: fixed;
+}
+#titleContainer h1{
+    text-align: center;
+}
+#tagLine{
+    width: 33vw;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.verticalCentre{
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    box-sizing: border-box;
+    padding-bottom: 5vh;
+    align-content: center;
+}
+#sequencerControls{
+    padding-top:4px;
+    padding-bottom:4px;
+    display: flex;
+    position:fixed;
+    right:0;
+    width:0;
+}
+#sequencerControls > div{
+    flex-grow: 1;
+}
+#sequencerControls > div:first-of-type{
+    align-self: center;
+    justify-items: center;
+}
+#sequencerControls > div:nth-of-type(2){
+    display: none;
+}
+#specificControls{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:50%;
+}
+.openDraw{
+    display: flex;
+    height:8vh;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+#control > div:nth-child(8){
+    font-size: 1.33em;
+    grid-column-start:1;
+    grid-column-end:6;
+    height:2vh;
+    margin-bottom: 10px;
+}
+
+#topControls{
+    position:fixed;
+    right:5vh;
+    top:25vh;
+    height:3vh;
+    display:flex;
+}
+#topControls > div{
+    height: 100%;
+    margin-right:10px;
+}
+#topControls img{
+    height:100%;
+    width:auto;
+    cursor: pointer;
+}
+.rangeslider__handle {
+    width: 20px;
+    height: 100px;
+  }
+  
+  
