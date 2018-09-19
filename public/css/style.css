@@ -9,8 +9,8 @@
 body{
     margin:0;
     font-size: 14pt;
-    background-color: black;
-    color:white;
+    background-color: white;
+    color:black;
     font-family: george;
 }
 h1{
@@ -31,8 +31,16 @@ h1{
 }
 .note{
     flex-grow: 1;
-    border:10px solid black;
-    background-color: #494949;
+    border-radius: 2px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,999999+100 */
+    background: #bcbcbc; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #bcbcbc 0%, #999999 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #bcbcbc 0%,#999999 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #bcbcbc 0%,#999999 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#999999',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    margin:3px;
+    cursor: pointer;
+    min-width: 50px;
 }
 
 .individualVolume{
@@ -62,9 +70,17 @@ h1{
 }
 .active{
     background-color: #dd2222;
+    -webkit-box-shadow: 0px 0px 6px 2px rgba(221,34,34,1);
+    -moz-box-shadow: 0px 0px 6px 2px rgba(221,34,34,1);
+    box-shadow: 0px 0px 6px 2px rgba(221,34,34,1);
 }
 .selected{
-    background-color:#df1f3d;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dd586c+0,e84a4a+100 */
+    background: #e84a4a ; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #dd586c 0%, #e84a4a 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #dd586c 0%,#e84a4a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #dd586c 0%,#e84a4a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd586c', endColorstr='#e84a4a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #sequenceContainer{
@@ -72,12 +88,9 @@ h1{
     width:100%;
     justify-content: center;
     align-content: center;
-    
+    padding-top:20px;
 }
-#addBar{
 
-
-}
 #addBar img{
     width:5vh;
     height:100%;
@@ -88,18 +101,23 @@ h1{
 #control{
     display:grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 0.5fr;
+    grid-template-rows:1fr 0.5fr 0.5fr;
     position: fixed;
     left:42.5vw;
-    bottom:5vh;
-    border:white solid 2px;
+    bottom:1vh;
+    border:black solid 4px;
     align-items:center;
     justify-content: center;
     box-sizing: border-box;
     padding:0.5vw;
-    border-radius: 10px;
-    color:white;
+    color:black;
     box-sizing: border-box;
+    padding-bottom: 0;
+    font-size: 0.75em;
+    border-radius: 2px;
+}
+#control > div#play{
+    height:4vh;
 }
 #tagLine{
 
@@ -111,6 +129,8 @@ h1{
     height:3vh; 
     box-sizing: border-box;
     justify-self: center;
+    align-self: center;
+    cursor: pointer;
 }
 #control img{
     height:80%;
@@ -118,6 +138,7 @@ h1{
 #play img{
     height:100%;
 }
+
 div#globalVolume{
     grid-column-start:2;
     grid-column-end:6;
@@ -127,10 +148,6 @@ div#globalVolume{
 #volume_slider{
     width:90%;
 }
-#clear{
-    
-}
-
 #time > div{
     display: inline;
 }
@@ -150,15 +167,13 @@ div#globalVolume{
     flex-direction: column;
     width:auto;
     height:auto;
-    margin-left: 1.5vw;
-    margin-right: 1.5vw;
+
 }
 
 #titleContainer{
     height:33vh;
     display: flex;
     justify-content: center;
-    padding:2.5vh;
     box-sizing: border-box;
 }
 #titleContainer > div{
@@ -180,8 +195,13 @@ div#globalVolume{
     justify-content: center;
     height: 50vh;
     box-sizing: border-box;
-    padding-bottom: 5vh;
+    padding-bottom: 2.5vh;
+    padding-top: 2.5vh;
     align-content: center;
+    background-color: black;
+    -webkit-box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
+    box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
 }
 #sequencerControls{
     padding-top:4px;
@@ -193,6 +213,7 @@ div#globalVolume{
 }
 #sequencerControls > div{
     flex-grow: 1;
+    cursor: pointer;
 }
 #sequencerControls > div:first-of-type{
     align-self: center;
@@ -213,6 +234,7 @@ div#globalVolume{
     align-items: center;
     font-size: 3em;
     cursor: pointer;
+    color:white;
 }
 
 #control > div:nth-child(8){
@@ -221,12 +243,13 @@ div#globalVolume{
     grid-column-end:6;
     height:2vh;
     margin-bottom: 10px;
+    cursor: default;
 }
 
 #topControls{
     position:fixed;
-    right:5vh;
-    top:25vh;
+    right:1vh;
+    top:33.5vh;
     height:3vh;
     display:flex;
 }
@@ -244,4 +267,7 @@ div#globalVolume{
     height: 100px;
   }
   
+  .clear{
+      clear:both;
+  }
   

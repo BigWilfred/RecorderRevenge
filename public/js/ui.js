@@ -4,7 +4,7 @@ var scrollCounter = 4;
 
 $(document).ready(function(){
     checkTagLine();
-
+    setPlayerPos();
     
 
     $('body').on('click', '#opener', function(){
@@ -52,6 +52,7 @@ $(document).ready(function(){
 $(window).on('resize', function(){
     setPlayerPos();
     checkTagLine();
+    $('#verticalCentre').css('width', '100%');
 })
 
 function setPlayerPos(){
