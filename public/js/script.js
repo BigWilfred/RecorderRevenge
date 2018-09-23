@@ -23,15 +23,13 @@ var currentlyMuted = false;
 var sliderMute = false;
 var playOnPress = true;
 
-var ammountAdded = 0;
-
 var barHtml = "<div class='bar'><div class='beat'><div class='note'></div><div class='note'></div><div class='note'></div><div class='note'></div><div class='position'><div class='dot'></div></div></div><div class='beat'><div class='note'></div><div class='note'></div><div class='note'></div><div class='note'></div><div class='position'><div class='dot'></div></div></div><div class='beat'><div class='note'></div><div class='note'></div><div class='note'></div><div class='note'></div><div class='position'><div class='dot'></div></div></div><div class='beat'><div class='note'></div><div class='note'></div><div class='note'></div><div class='note'></div><div class='position'><div class='dot'></div></div></div></div>"
 
 var beatHtml = "<div class='beat' id='channelVolume'></div>";
 var addBarHtml = "<div id='addBar'><div><img src='img/plus.svg'></div></div>";
 
 $(document).ready(function(){
-
+    
     Ibpm = 60000/bpm;
 
     //sets the starting value of the volume sliders
@@ -50,19 +48,26 @@ $(document).ready(function(){
     })
     $('body').on('click','#addBar', function(){
 
-        ammountAdded++;
+        
         $('#sequenceContainer .bar:last-of-type').css('padding-right','0');
         fullBar++;
         console.log(fullBar);
         calculateLoop(fullBar);
         $('#sequenceContainer').append(barHtml);
 
+        
+
         $('#sequenceContainer').css('justify-content', 'left');
         $('#sequenceContainer .bar:last-of-type').css('padding-right','3vw');
+        
+        var newWidth = $('#sequenceContainer .bar:last-of-type').offset().left+$('#sequenceContainer .bar:last-of-type').outerWidth();
+        $('.verticalCentre').css('width', newWidth);
 
         if(!currentlyPlaying){
             //scroll to the new bar
             console.log('trying to scroll in add bar');
+            
+            
             $('#sequenceContainer .bar:last-of-type').velocity("scroll", { axis: "x" });
         }
         else{
@@ -116,6 +121,7 @@ $(document).ready(function(){
         $('#hours').html('0');
         $('#minutes').html(':0:');
         $('#seconds').html('0');
+        $('#sequenceContainer').velocity("scroll", { axis: "x" });
     })
 
     $('body').on('click', '#clear', function(){
@@ -286,15 +292,7 @@ function determinePosition(){
     }
 }
 
-function scrollScreen(){
-    if(positionInLoop ==0 ){
-        $('#sequenceContainer').velocity("scroll", { axis: "x" });
-    }
-    //move towards the right as the loop is playing
-    if(positionInLoop > 1 && fullBar >4){
-        $('#sequenceContainer .bar:nth-of-type('+ (positionInLoop - 1) +') .beat:nth-of-type('+(positionInBar+1)+')').velocity("scroll", { axis: "x", easing:'easeInOutCubic' });
-    }
-}
+
 
 //returns the total amount of seconds that have elapsed since starting.
 function elapsedTime(){
@@ -361,5 +359,12 @@ function changeOctive(){
         sample2 = highSample2;
         sample3 = highSample3;
         sample4 = highSample4;
+    }
+}
+function calculateMiddleBar(){
+    var windowWidth = $(window).outerWidth();
+    console.log('window width =  '+ windowWidth);
+    for(i=1; i <= fullBar; i++){
+        console.log($('#sequenceContainer .bar:nth-of-type('+ (i) +')').offset().left);
     }
 }

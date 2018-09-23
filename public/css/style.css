@@ -3,20 +3,25 @@
     src: url(CocoPuff-Regular.ttf);
 }
 @font-face {
-    font-family: george;
-    src: url(Louis-George-Cafe.ttf);
+    font-family: renner;
+    src: url(Renner.ttf);
 }
+
 body{
     margin:0;
     font-size: 14pt;
-    background-color: white;
-    color:black;
-    font-family: george;
+    background-color: black;
+    color:white;
+    font-family: renner;
 }
-h1{
+#title{
+    text-align: center;
     margin: 0;
     font-family:coco;
-    font-size: 4em;
+    font-size: 64pt;
+}
+p{
+    margin:10px;
 }
 .bar{
     display:flex;
@@ -40,7 +45,7 @@ h1{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#999999',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     margin:3px;
     cursor: pointer;
-    min-width: 50px;
+    min-width: 70px;
 }
 
 .individualVolume{
@@ -60,6 +65,7 @@ h1{
     display: block;
     margin:0 auto;
     border-radius: 50%;
+    background-color: #e84a4a;
 }
 .individualVolume input{
     width: 100%;
@@ -75,12 +81,12 @@ h1{
     box-shadow: 0px 0px 6px 2px rgba(221,34,34,1);
 }
 .selected{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dd586c+0,e84a4a+100 */
-    background: #e84a4a ; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #dd586c 0%, #e84a4a 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, #dd586c 0%,#e84a4a 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, #dd586c 0%,#e84a4a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd586c', endColorstr='#e84a4a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e84a4a+0,dd2222+100 */
+    background: #e84a4a; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #e84a4a 0%, #dd2222 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #e84a4a 0%,#dd2222 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #e84a4a 0%,#dd2222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e84a4a', endColorstr='#dd2222',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #sequenceContainer{
@@ -89,6 +95,7 @@ h1{
     justify-content: center;
     align-content: center;
     padding-top:20px;
+    border-top:solid 3px white;
 }
 
 #addBar img{
@@ -104,7 +111,7 @@ h1{
     grid-template-rows:1fr 0.5fr 0.5fr;
     position: fixed;
     left:42.5vw;
-    bottom:1vh;
+    bottom:2.5%;
     border:black solid 4px;
     align-items:center;
     justify-content: center;
@@ -115,6 +122,7 @@ h1{
     padding-bottom: 0;
     font-size: 0.75em;
     border-radius: 2px;
+    background-color: white;
 }
 #control > div#play{
     height:4vh;
@@ -151,7 +159,11 @@ div#globalVolume{
 #time > div{
     display: inline;
 }
-
+#time{
+    position: fixed;
+    right: 15.5vh;
+    top: 32.6vh;
+}
 #bpm_slider{
     position: absolute;
     left:10%;
@@ -178,17 +190,19 @@ div#globalVolume{
 }
 #titleContainer > div{
     width:66vw;
-    height:25vh;;
+    height:25vh;
     position: fixed;
+    margin-top: 1vh;
 }
 #titleContainer h1{
     text-align: center;
 }
 #tagLine{
-    width: 33vw;
+    width: 50%;
     display: block;
     margin: auto;
     text-align: center;
+    margin-top: 2vh;
 }
 .verticalCentre{
     display: flex;
@@ -202,6 +216,7 @@ div#globalVolume{
     -webkit-box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
     -moz-box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
     box-shadow: 0px 0px 7px 10px rgba(0,0,0,1);
+    max-width:1000%;
 }
 #sequencerControls{
     padding-top:4px;
@@ -249,7 +264,7 @@ div#globalVolume{
 #topControls{
     position:fixed;
     right:1vh;
-    top:33.5vh;
+    top:32vh;
     height:3vh;
     display:flex;
 }
@@ -265,9 +280,5 @@ div#globalVolume{
 .rangeslider__handle {
     width: 20px;
     height: 100px;
-  }
-  
-  .clear{
-      clear:both;
   }
   
