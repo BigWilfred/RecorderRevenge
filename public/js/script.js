@@ -60,9 +60,10 @@ $(document).ready(function(){
         $('#sequenceContainer').css('justify-content', 'left');
         $('#sequenceContainer .bar:last-of-type').css('padding-right','3vw');
         
+        
         var newWidth = $('#sequenceContainer .bar:last-of-type').offset().left+$('#sequenceContainer .bar:last-of-type').outerWidth();
-        $('.verticalCentre').css('width', newWidth);
-
+        $('#titleContainer').css('width', newWidth);
+        
         if(!currentlyPlaying){
             //scroll to the new bar
             console.log('trying to scroll in add bar');
@@ -338,7 +339,7 @@ function bpmImage(){
 function changeOctive(){
     if(currentOctive ==1){
         currentOctive =2;
-        console.log(currentOctive);
+        $('#octive img').attr('src','img/note_m.svg');
         sample1 = middleSample1;
         sample2 = middleSample2;
         sample3 = middleSample3;
@@ -346,7 +347,7 @@ function changeOctive(){
     }
     else if(currentOctive == 2){
         currentOctive =3;
-
+        $('#octive img').attr('src','img/note_l.svg');
         sample1 = lowSample1;
         sample2 = lowSample2;
         sample3 = lowSample3;
@@ -354,7 +355,7 @@ function changeOctive(){
     }
     else{
         currentOctive = 1;
-
+        $('#octive img').attr('src','img/note_h.svg');
         sample1 = highSample1;
         sample2 = highSample2;
         sample3 = highSample3;

@@ -4,18 +4,18 @@ var scrollCounter = 4;
 var tagLineVisible = false;
 
 $(document).ready(function(){
-    checkTagLine();
+    //checkTagLine();
     setPlayerPos();
     topResposive();
     barSet();
     calculateMiddleBar();
-
-
+    
+    
     $('body').on('click', '#opener', function(){
         if(!sequencerControlsOut){
             $('#sequencerControls > div:nth-of-type(2)').css('display', 'flex');
             $('#specificControls').css('display', 'flex');
-            $('#sequencerControls').velocity({width:'6vw'});
+            $('#sequencerControls').velocity({width:'15%'});
             sequencerControlsOut = true;
         }
         else{
@@ -59,8 +59,9 @@ $(window).on('resize', function(){
     topResposive();
     barSet();
     if(fullBar > 4){
-        var newWidth = $('#sequenceContainer .bar:last-of-type').offset().left+$('#sequenceContainer .bar:last-of-type').outerWidth();
-        $('.verticalCentre').css('width', newWidth);
+        var newWidth = $('#sequenceContainer .bar:last-of-type').offset().left+$('#titleContainer').outerWidth();
+        console.log('title grow')
+        $('#titleContainer').css('width', newWidth);
     }
 })
 
@@ -89,7 +90,7 @@ function scrollScreen(){
     /* this is the current beat being played!
     $('#sequenceContainer .bar:nth-of-type('+ (positionInLoop+1) +') .beat:nth-of-type('+(positionInBar+1)+')').css('background-color','blue');
     */
-   
+
     //last note has been played on last bar > go to start of sequence container
     if(positionInLoop ==0 ){
         $('#sequenceContainer .bar:nth-of-type(1)').velocity("scroll", { axis: "x" });
@@ -107,16 +108,18 @@ function topResposive(){
     if(topContainerWidth <= 500){
         
         $('#titleContainer > div').css('width','100vw');
+        $('#titleContainer > div').css('margin-left','0');
         $('#tagLine').css('visibility', 'hidden');
         //$('#title').html('Recorder<br>Revenge');
         $('#title').css('font-size','12.5vw');
-        $('#title').css('margin-top','20%');
+        $('#title').css('margin-top','10%');
     }
     else{
         //reset
         $('#title').css('font-size','64pt');
         $('#title').css('margin-top','0');
         //$('#tagLine').css('visibility', 'visible');
+        $('#titleContainer > div').css('margin-left','17vw;');
     }
 }
 
