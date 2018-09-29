@@ -280,7 +280,7 @@ div#globalVolume{
 }
 #topControls > div{
     height: 100%;
-    /*margin-right:10px;*/
+    margin-right:10px;
 }
 #topControls img{
     height:100%;
@@ -318,4 +318,10 @@ body > div:nth-child(1) > div:nth-child(1){
 }
 .titleWords{
     margin-left:10px;
+}
+#sticker{
+    position: fixed;
+    bottom:0;
+    left:0;
+    height:15%;
 }
