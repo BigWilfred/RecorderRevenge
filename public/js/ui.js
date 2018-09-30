@@ -108,6 +108,9 @@ function topResposive(){
     var aspectRatio = $(window).outerWidth() / $(window).outerHeight();
 
     if(aspectRatio < 1){
+        var titleBottom = ($('#title').offset().top + $('#title').outerHeight())*1.1;
+        console.log(titleBottom);
+        $('body > div:nth-child(1) > div:nth-child(1)').css('top',titleBottom );
         
         /*var topControlsWidth = $('#topControls').outerWidth();
         var windowWidth = $(window).outerWidth();
@@ -122,6 +125,10 @@ function topResposive(){
         $('#title').css('font-size','12.5vw');
         $('#title').css('margin-top','10%');
         $('#control').css('width', '80vw');
+
+        var titleBottom = ($('#title').offset().top + $('#title').outerHeight())*1.1;
+        console.log(titleBottom);
+        $('body > div:nth-child(1) > div:nth-child(1)').css('top',titleBottom );
     }
     else{
         //reset
