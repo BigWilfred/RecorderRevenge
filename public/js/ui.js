@@ -105,9 +105,9 @@ function scrollScreen(){
     }
 }
 function topResposive(){
-    var topContainerWidth = $('#titleContainer > div').outerWidth();
+    var aspectRatio = $(window).outerWidth() / $(window).outerHeight();
 
-    if(topContainerWidth <= 480){
+    if(aspectRatio < 1){
         
         /*var topControlsWidth = $('#topControls').outerWidth();
         var windowWidth = $(window).outerWidth();
