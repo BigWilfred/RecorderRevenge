@@ -5,8 +5,9 @@ var tagLineVisible = false;
 
 $(document).ready(function(){
     //checkTagLine();
-    setPlayerPos();
+    
     topResposive();
+    setPlayerPos();
     barSet();
     calculateMiddleBar();
     
@@ -54,9 +55,10 @@ $(document).ready(function(){
 })
 
 $(window).on('resize', function(){
+    topResposive();
     setPlayerPos();
     checkTagLine();
-    topResposive();
+    
     barSet();
     if(fullBar > 4){
         var newWidth = $('#sequenceContainer .bar:last-of-type').offset().left+$('#titleContainer').outerWidth();
@@ -105,21 +107,31 @@ function scrollScreen(){
 function topResposive(){
     var topContainerWidth = $('#titleContainer > div').outerWidth();
 
-    if(topContainerWidth <= 500){
+    if(topContainerWidth <= 480){
         
+        /*var topControlsWidth = $('#topControls').outerWidth();
+        var windowWidth = $(window).outerWidth();
+
+        var topMiddle = (windowWidth - topControlsWidth)/2;
+        $('#topControls').css('right',topMiddle);*/
+
         $('#titleContainer > div').css('width','100vw');
         $('#titleContainer > div').css('margin-left','0');
         $('#tagLine').css('visibility', 'hidden');
         //$('#title').html('Recorder<br>Revenge');
         $('#title').css('font-size','12.5vw');
         $('#title').css('margin-top','10%');
+        $('#control').css('width', '80vw');
     }
     else{
         //reset
+       // $('#topControls').css('right','0');
+
         $('#title').css('font-size','64pt');
         $('#title').css('margin-top','0');
         //$('#tagLine').css('visibility', 'visible');
         $('#titleContainer > div').css('margin-left','17vw;');
+        $('#control').css('width', 'auto');
     }
 }
 

@@ -7,6 +7,11 @@
     src: url(Renner.ttf);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  
+
+    
+}
 body{
     margin:0;
     font-size: 14pt;
@@ -273,7 +278,7 @@ div#globalVolume{
 #topControls{
     position:fixed;
     right:-30vh;
-    top:32vh;
+    top:30vh;
     height:3vh;
     display:flex;
     align-items: baseline;

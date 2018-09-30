@@ -101,7 +101,9 @@ $(document).ready(function(){
         preload:true,
         onload:checkFullyDone()
     });
-
+    var titleBottom = ($('#title').offset().top + $('#title').outerHeight())*1.1;
+    console.log(titleBottom);
+    $('body > div:nth-child(1) > div:nth-child(1)').css('top',titleBottom );
     $('body').on('click', '#ready', function(){
         if(ready){
             
