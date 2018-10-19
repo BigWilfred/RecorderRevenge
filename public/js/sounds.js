@@ -23,7 +23,7 @@ var lowSample4;
 
 $(document).ready(function(){
     sample1 = new Howl({
-        src: ['https://instaud.io/_/2GUL.wav'],
+        src: ['https://instaud.io/_/2OKa.wav'],
         onload:checkFullyDone()
     });
     sample2 = new Howl({
@@ -40,7 +40,7 @@ $(document).ready(function(){
     });
     
     highSample1 = new Howl({
-        src: ['https://instaud.io/_/2GUL.wav'],
+        src: ['https://instaud.io/_/2OKa.wav'],
         preload:true,
         onload:checkFullyDone()
     });
@@ -101,9 +101,7 @@ $(document).ready(function(){
         preload:true,
         onload:checkFullyDone()
     });
-    var titleBottom = ($('#title').offset().top + $('#title').outerHeight())*1.1;
-    console.log(titleBottom);
-    $('body > div:nth-child(1) > div:nth-child(1)').css('top',titleBottom );
+    
     $('body').on('click', '#ready', function(){
         if(ready){
             
@@ -114,6 +112,7 @@ $(document).ready(function(){
                 barSet();
                 $('#titleContainer > div').velocity({top:'0vh'},{
                     complete:function(){
+                        $('#ready').css('display','none');
 
                         $('.verticalCentre').velocity({opacity:1},{duration:800,
                             complete:function(){

@@ -309,7 +309,7 @@ div#globalVolume{
     border-radius: 10px;
     display: block;
     margin:0 auto;
-
+    z-index: -1;
 }
 #ready img{
     height:auto;
@@ -320,6 +320,7 @@ body > div:nth-child(1) > div:nth-child(1){
     width: 100%;
     position: absolute;
     top: 55vh;
+    
 }
 .titleWords{
     margin-left:10px;
