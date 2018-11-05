@@ -23,81 +23,81 @@ var lowSample4;
 
 $(document).ready(function(){
     sample1 = new Howl({
-        src: ['https://instaud.io/_/2OKa.wav'],
+        src: ['./sounds/h_sound1.wav'],
         onload:checkFullyDone()
     });
     sample2 = new Howl({
-        src: ['https://instaud.io/_/2JOb.wav'],
+        src: ['./sounds/h_sound2.wav'],
         onload:checkFullyDone()
     });
     sample3 = new Howl({
-        src: ['https://instaud.io/_/2JOc.wav'],
+        src: ['./sounds/h_sound3.wav'],
         onload:checkFullyDone()
     });
     sample4 = new Howl({
-        src: ['https://instaud.io/_/2JOf.wav'],
+        src: ['./sounds/h_sound4.wav'],
         onload:checkFullyDone()
     });
     
     highSample1 = new Howl({
-        src: ['https://instaud.io/_/2OKa.wav'],
+        src: ['./sounds/h_sound1.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     highSample2 = new Howl({
-        src: ['https://instaud.io/_/2JOb.wav'],
+        src: ['./sounds/h_sound2.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     highSample3 = new Howl({
-        src: ['https://instaud.io/_/2JOc.wav'],
+        src: ['./sounds/h_sound3.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     highSample4 = new Howl({
-        src: ['https://instaud.io/_/2JOf.wav'],
+        src: ['./sounds/h_sound4.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     
     middleSample1 = new Howl({
-        src: ['https://instaud.io/_/2JOg.wav'],
+        src: ['./sounds/m_sound1.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     middleSample2 = new Howl({
-        src: ['https://instaud.io/_/2JOh.wav'],
+        src: ['./sounds/m_sound2.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     middleSample3 = new Howl({
-        src: ['https://instaud.io/_/2JOi.wav'],
+        src: ['./sounds/m_sound3.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     middleSample4 = new Howl({
-        src: ['https://instaud.io/_/2JOj.wav'],
+        src: ['./sounds/m_sound4.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     
     lowSample1 = new Howl({
-        src: ['https://instaud.io/_/2JOl.wav'],
+        src: ['./sounds/l_sound1.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     lowSample2 = new Howl({
-        src: ['https://instaud.io/_/2JOn.wav'],
+        src: ['./sounds/l_sound2.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     lowSample3 = new Howl({
-        src: ['https://instaud.io/_/2JOo.wav'],
+        src: ['./sounds/l_sound3.wav'],
         preload:true,
         onload:checkFullyDone()
     });
     lowSample4 = new Howl({
-        src: ['https://instaud.io/_/2JOq.wav'],
+        src: ['./sounds/l_sound4.wav'],
         preload:true,
         onload:checkFullyDone()
     });
